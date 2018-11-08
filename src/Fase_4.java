@@ -15,23 +15,13 @@ import java.lang.*;
 public class Fase_4 {
 
     public static void main(String[] args) {
+        String[]  name = new String[] {"J","O","N","A","T","A","N"};
+        String[]  surname = new String[] {"A","R","R","O","Y","O",};
+        //LinkedList ll = new LinkedList(Arrays.asList(sa));
 
-        LinkedList<String> myName = new LinkedList<>();
-        myName.add("J");
-        myName.add("O");
-        myName.add("N");
-        myName.add("A");
-        myName.add("T");
-        myName.add("A");
-        myName.add("N");
+        LinkedList<String> myName = new LinkedList(Arrays.asList(name));
+        LinkedList<String> mySurname = new LinkedList(Arrays.asList(surname));
 
-        LinkedList<String> mySurname = new LinkedList<>();
-        mySurname.add("A");
-        mySurname.add("R");
-        mySurname.add("R");
-        mySurname.add("O");
-        mySurname.add("Y");
-        mySurname.add("O");
 
         LinkedList<String> fullName = new LinkedList<>();
         fullName.addAll(myName);
@@ -42,4 +32,3 @@ public class Fase_4 {
 
     }
 }
-
