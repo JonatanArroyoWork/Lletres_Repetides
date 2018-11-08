@@ -10,37 +10,34 @@ import java.lang.*;
 
 public class Fase_3 {
 
+    private static Map<Character, Integer> myNameMap = new HashMap<>();
     public static void main(String[] args) {
 
-
-        /*String name = "JONATAN";
-
-ArrayList<Character> myName = new ArrayList<>(name.Arrays.asList(name.split(",")));
-
-System.out.println(myName);*/
 
         Character[] Name= {'J','O','N','A','T','A','N'};
 
         ArrayList<Character> myName = new ArrayList<> (Arrays.asList(Name));
 
-        Map<Character, Integer> myNameMap = new HashMap<>(); //Mapa
 
-        for (int i=0; i<myName.size(); i++){
+        for (int i=0; i<myName.size(); i++){  // mientras que i sea menor que el tamño de Mi Nombre
 
-            Character c = myName.get(i);
+            Character c = myName.get(i);    // c es igual a coger la letra i de mi nombre
 
-            if (myNameMap.get(c)!=null){
-
-                int contador = myNameMap.get(c);
-
-                myNameMap.put(c, ++contador);
-            }
-            else { myNameMap.put(c, 1);}
-
+            itHasTheLetter(c);
         }
         System.out.println(myName);
         System.out.println(myNameMap);
         System.out.println("my Name's map size is " + myNameMap.size());
 
     }
+
+    private static void itHasTheLetter(Character letter){
+        if( myNameMap.containsKey(letter)){
+            int contador = myNameMap.get(letter);
+            myNameMap.put(letter, ++contador);
+
+        }else{ myNameMap.put(letter, 1);}
+
+    }
+
 }

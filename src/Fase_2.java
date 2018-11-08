@@ -10,22 +10,27 @@ import java.lang.*;
 
 public class Fase_2 {
 
+    private static Character[] vowels= {'A','E','I','O','U'}; //Matriz con las vocales
+
     public static void main(String[] args) {
 
         Character[] myName= {'J','O','N','A','7','A','N'}; //Matriz con datos de tipo String
-        Character[] vowels= {'A','E','I','O','U'}; //Matriz con las vocales
 
-        for (int i=0; i<7; i++)
+        for (int i=0; i<myName.length; i++)
 
-            if (Arrays.asList(vowels).contains(myName[i])) {
+            if (isVowel(myName[i])) {
                 System.out.println(myName[i] + " es una" + " VOCAL");
 
-            } else if ((Boolean) Character.isDigit(myName[i])) {
+            } else if (Character.isDigit(myName[i])) {
                 System.out.println(myName[i] + " NO ES UNA LETRA, ES UN NUMERO!!!!");
 
             } else {
                 System.out.println(myName[i] + " es una" + " CONSONANT ");
             }
-
     }
+
+    private static boolean isVowel(char letter){
+        return Arrays.asList(vowels).contains(letter);
+    }
+
 }
